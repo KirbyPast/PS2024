@@ -62,4 +62,4 @@ proportion_test = function(n, p_prim, p_0, alfa, type){#type = 'l', 'r', 's'
 # h0: p = 0.1
 # ha: p > 0.1
 
-proportion_test(150,0.13,0.1,0.05,'r')
+proportion_test(150,0.13,0.13,0.05,'r')

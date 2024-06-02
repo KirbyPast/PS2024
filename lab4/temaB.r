@@ -16,7 +16,7 @@ volum_tor = function(N,R,r) {
   print("volum tor calculat:")
   print((nc/N)*volum_spatiu);
 }
-
+print("Calcule volum tor pt 10000, 20000 si 50000 de incercari")
 volum_tor(10000,10,3);
 volum_tor(20000,10,3);
 volum_tor(50000,10,3);
@@ -41,7 +41,7 @@ arie_triunghi = function(N,a,b,c,d){
   print("arie triunghi: ")
   print((nc/N)*arie_spatiu);
 }
-
+print("Arie triunghi dupa 10000 de incercari:")
 arie_triunghi(10000,a,b,c,d);
 
 #III.1
@@ -87,9 +87,9 @@ calcul_integrala_c= function(N,lambda){
   print("valoare reala integrala: ")
   print(1/2)
   print("valoare calculata integrala: ")
-  print(abs(sum/N-1/2));
+  print(sum/N);
   print("eroare integrala:")
-  print(abs(sum/N-1/2)/abs(1/2));
+  print(abs(sum/N-1/2));
   return(sum/N); 
 
 }
@@ -140,7 +140,8 @@ simuleaza_ani_noprint = function(numar_initial, numar_target,p,q,n){
   return(ani_average);
 }
 
-sansa_atingere_target = function(numar_target,numar_initial,numar_ani,p,q,k, N){
+sansa_atingere_target = function(numar_target,numar_initial,numar_ani,numar_luni,p,q,k, N){
+  numar_ani = numar_ani + numar_luni/12;
   rezultate = vector();
   for(i in 1:k){
     if(simuleaza_ani_noprint(numar_initial,numar_target,p,q,N)>numar_ani){
@@ -154,4 +155,5 @@ sansa_atingere_target = function(numar_target,numar_initial,numar_ani,p,q,k, N){
   print(mean(rezultate));
 }
 
-sansa_atingere_target(15000,10000,40,p,q,10,1000);
+sansa_atingere_target(15000,10000,40,10,p,q,10,1000)
+
